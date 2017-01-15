@@ -6,7 +6,11 @@ public class Team implements Comparator<Team>{
 	
 	private String name;
 	private double rating;
+	private double initRating;
 	private int bracket;
+	
+	public int wins, losses, draws;
+	
 	
 	private Player p1, p2;
 	
@@ -20,19 +24,20 @@ public class Team implements Comparator<Team>{
 	public Team(String name, double startRating){
 		this.name = name;
 		rating = startRating;
+		initRating = startRating;
 	}
 	
 	public Team(String name, Player p1, Player p2){
 		this.name = name;
 		this.p1 = p1;
 		this.p2 = p2;
-		rating = determineTeamRating(p1, p2);
+		rating = initRating = determineTeamRating(p1, p2);
 	}
 	
 	public Team(Player p1, Player p2){
 		this.p1 = p1;
 		this.p2 = p2;
-		rating = determineTeamRating(p1, p2);
+		rating = initRating = determineTeamRating(p1, p2);
 	}
 	
 	public boolean addPlayers(Player player1, Player player2){
@@ -50,6 +55,8 @@ public class Team implements Comparator<Team>{
 		if(name != null) s+= "-" + getName() + "- | ";
 		s += "" + p1.getName() + " - " + p2.getName() + " [" + getRating() + "]";
 		if(bracket != 0) s += " {" + getBracket() + "}";
+		s += "[" + (getRating()-initRating) + "]";
+		s += " - W/L/D: " + wins +"/" + losses + "/" + draws;
 		return s;
 	}
 	
@@ -80,6 +87,30 @@ public class Team implements Comparator<Team>{
 	@Override
 	public int compare(Team t1, Team t2) {
 		return t1.getRating() > t2.getRating() ? 1 : -1;
+	}
+
+	public void setWins(int wins) {
+		this.wins = wins;
+	}
+
+	public void setLosses(int losses) {
+		this.losses = losses;
+	}
+
+	public void setDraws(int draws) {
+		this.draws = draws;
+	}
+
+	public int getWins() {
+		return wins;
+	}
+
+	public int getLosses() {
+		return losses;
+	}
+
+	public int getDraws() {
+		return draws;
 	}
 
 	
