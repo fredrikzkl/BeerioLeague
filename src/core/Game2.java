@@ -16,7 +16,7 @@ public class Game2 {
 		Player vetle = new Player("Vetle",2047.39);
 		Player lydia = new Player("Lydia",1985.52);
 		
-		Player bjørn = new Player("Bjørn");
+		Player bjÃ¸rn = new Player("Bjï¿½rn");
 		Player snorre = new Player("Snorre");
 		
 		Player marius = new Player("Marius");
@@ -26,7 +26,7 @@ public class Game2 {
 		Player storla = new Player("Storla");
 		
 		Player runar = new Player("Runar");
-		Player aarø = new Player("Aarø");
+		Player aarÃ¸ = new Player("Aarï¿½");
 		
 		Player sondre = new Player("Sondre");
 		Player sven = new Player("Sven");
@@ -47,13 +47,13 @@ public class Game2 {
 		
 		Team george = new Team("George",vetle,lydia);
 		tl.add(george);
-		Team kongene = new Team("Kongene",bjørn,snorre);
+		Team kongene = new Team("Kongene",bjÃ¸rn,snorre);
 		tl.add(kongene);
 		Team BBC = new Team("BBC", marius,simenD);
 		tl.add(BBC);
 		Team Beerdong= new Team("Beerdong",brudevoll,storla);
 		tl.add(Beerdong);
-		Team erdeg = new Team("erdeg",runar,aarø);
+		Team erdeg = new Team("erdeg",runar,aarÃ¸);
 		tl.add(erdeg);
 		
 		Team darthvader = new Team("Darthvader",fredrik,jonas);

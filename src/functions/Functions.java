@@ -89,6 +89,14 @@ public class Functions {
 		return s;
 	}
 	
+	public static String calculateTime(int brackets, List<Team> tl, int minutesPrMatch){
+		double time = (((calculateMatchesPrBracket(brackets, tl))*brackets) + 3)*minutesPrMatch  ;
+		double hours = time /60;
+		double minutes = time%60;
+		
+		return "\nTime: " + (int)Math.floor(hours) + ":" + (int)minutes + ":" + "00";
+	}
+	
 	
 	
 }
