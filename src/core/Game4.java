@@ -52,8 +52,20 @@ public class Game4 {
 		Player persch = new Player("Persch",2000.0);
 		sl.add(persch);
 		
+		Player bard = new Player("Bård Spein");
+		sl.add(bard);
 		
-		tl = Functions.forceLowRatingDifferance(50, sl); //40
+		Player edvard = new Player("Edvard");
+		sl.add(edvard);
+		
+		
+		/*
+		Player dyb = new Player("Dyb Arseth",1954.99);
+		sl.add(dyb);
+		*/
+	
+	
+	    tl = Functions.forceLowRatingDifferance(45, sl); //40	
 		tl = Functions.distrubuteBrackets(2, tl);
 		
 		for(Team t : tl){

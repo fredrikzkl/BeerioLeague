@@ -113,7 +113,13 @@ public class Team implements Comparator<Team>{
 		return draws;
 	}
 
-	
-	
+	public Player getP1() {
+		return p1;
+	}
+
+	public Player getP2() {
+		return p2;
+	}
+
 	
 }

@@ -39,6 +39,7 @@ public class Functions {
 			int rng = rand.nextInt(((copy.size()-1) - (indeks+1)) + 1) + (indeks+1);
 			
 			teamList.add(new Team(copy.get(indeks),copy.get(rng)));
+			
 			copy.remove(rng);
 			copy.remove(indeks); 
 			
@@ -57,6 +58,15 @@ public class Functions {
 			}
 		}
 		return biggest - lowest;
+	}
+	
+	public static boolean checkTeam(Player p1, Player p2, List<Team> exceptions){
+		for(Team t : exceptions){
+			if((t.getP1() == p1 || t.getP1() == p2) && (t.getP2() == p1 || t.getP2() == p1)){
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public static List<Team> forceLowRatingDifferance(double value, List<Player> sl){
@@ -96,6 +106,9 @@ public class Functions {
 		
 		return "\nTime: " + (int)Math.floor(hours) + ":" + (int)minutes + ":" + "00";
 	}
+	
+	
+	
 	
 	
 	
