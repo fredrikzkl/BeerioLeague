@@ -34,8 +34,8 @@ public class Game4 {
 		Player andreas = new Player("Andreas", 2005.36);
 		sl.add(andreas);
 		
-		Player grotting = new Player("Grøtting", 2001.81);
-		sl.add(grotting);
+		Player sixten = new Player("Sixten", 2009.03);
+		sl.add(sixten);
 		
 		Player nicolas = new Player ("Nicholas",2000.76);
 		sl.add(nicolas);
@@ -55,26 +55,64 @@ public class Game4 {
 		Player bard = new Player("Bård Spein");
 		sl.add(bard);
 		
-		Player edvard = new Player("Edvard");
-		sl.add(edvard);
+		Player snorre = new Player("Snorre",2002.61);
+		sl.add(snorre);
 		
-		
-		/*
 		Player dyb = new Player("Dyb Arseth",1954.99);
 		sl.add(dyb);
-		*/
+		
+		Team moonlight = new Team(dyb,jonas);
+		tl.add(moonlight);
+		
+		Team george = new Team(marius,sixten);
+		tl.add(george);
+		
+		Team cuckBrigade = new Team(bard,aksel);
+		tl.add(cuckBrigade);
+		
+		Team faggots = new Team(snorre,persch);
+		tl.add(faggots);
+		
+		Team warriors = new Team(runar,kloster);
+		tl.add(warriors);
+		Team queerPong = new Team(lydia,brudevoll);
+		tl.add(queerPong);
+		Team dabAlly = new Team(andreas,nicolas);
+		tl.add(dabAlly);
+		Team fratBoyz = new Team(vetle,kjetland);
+		tl.add(fratBoyz);
 	
-	
-	    tl = Functions.forceLowRatingDifferance(45, sl); //40	
-		tl = Functions.distrubuteBrackets(2, tl);
+		//Games
+		Event.game(warriors, dabAlly);
+		Event.game(moonlight, cuckBrigade);
+		
+		Event.draw(queerPong, fratBoyz);
+		Event.game(george, faggots);
+		
+		Event.draw(warriors,fratBoyz);
+		Event.game(george, moonlight);
+		
+		Event.draw(queerPong,dabAlly);
+		Event.game(george, cuckBrigade);
+		
+		Event.game(faggots, cuckBrigade);
+		Event.game(warriors, queerPong);
+		
+		Event.game(moonlight, faggots);
+		Event.draw(fratBoyz, dabAlly);
+		
+		//Semis
+		Event.game(moonlight, warriors);
+		Event.game(fratBoyz, george);
+		//Finals
+		Event.game(fratBoyz, moonlight);
 		
 		for(Team t : tl){
 			System.out.println(t);
 		}
 		
-		System.out.println(Functions.calculateTime(2, tl, 10));
 		
-		//Games
+	  
 		
 	}
 
