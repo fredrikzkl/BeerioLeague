@@ -31,9 +31,9 @@ public class Game3 {
 		Player kjetland = new Player("Kjetland",2000);
 		Team damatilvetle = new Team("Dama til Vetle",kjetland,persch);
 		
-		Player grøtting = new Player("Gr�tting",1996.88);
+		Player grotting = new Player("Gr�tting",1996.88);
 		Player sixten = new Player("Sixten",1985.52);
-		Team general = new Team("General",grøtting,sixten);
+		Team general = new Team("General",grotting,sixten);
 		
 		tl.add(darkside);
 		tl.add(approved);

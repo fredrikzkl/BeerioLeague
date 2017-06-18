@@ -37,6 +37,7 @@ public class Team implements Comparator<Team>{
 	public Team(Player p1, Player p2){
 		this.p1 = p1;
 		this.p2 = p2;
+		this.name = p1.getName();
 		rating = initRating = determineTeamRating(p1, p2);
 	}
 	
