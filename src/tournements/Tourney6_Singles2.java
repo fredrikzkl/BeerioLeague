@@ -1,13 +1,16 @@
-package core;
+package tournements;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import core.Player;
+import core.Team;
 import functions.Event;
+import functions.IOFiles;
 
 public class Tourney6_Singles2 {
 	public static void main(String[] args) {
-		ArrayList<Player> sl = new ArrayList<Player>();
+		List<Player> pl = new ArrayList<Player>();
 		List<Team> tl = new ArrayList<Team>();
 		
 		Player jonas = new Player("Jonas",2146.38);
@@ -15,10 +18,14 @@ public class Tourney6_Singles2 {
 		Team jonas_t = new Team(jonas,nicholas);
 		tl.add(jonas_t);
 		
-		Player grotting = new Player("Grøtting",2044.16);
+		
+		
+		Player grotting = new Player("Grï¿½tting",2044.16);
 		Player simenP = new Player("Simen P",1985);
 		Team grotting_t = new Team(grotting,simenP);
 		tl.add(grotting_t);
+		
+		
 		
 		Player fredrik = new Player("Fredrik",2043.62);
 		Team fredrik_t = new Team(fredrik,fredrik);
@@ -119,7 +126,7 @@ public class Tourney6_Singles2 {
 		for(Team t : tl){
 			System.out.println(t);
 		}
-		
+	
 		
 	}
 

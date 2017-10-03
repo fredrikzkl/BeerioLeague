@@ -1,8 +1,10 @@
-package core;
+package tournements;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import core.Player;
+import core.Team;
 import functions.Event;
 
 public class Tourney5_Singles {
@@ -26,7 +28,7 @@ public class Tourney5_Singles {
 		Team eivind_t = new Team(eivind,eivind);
 		tl.add(eivind_t);
 		
-		Player grotting = new Player("Grøtting",2001.81);
+		Player grotting = new Player("Grï¿½tting",2001.81);
 		Team grotting_t = new Team(grotting,grotting);
 		tl.add(grotting_t);
 		

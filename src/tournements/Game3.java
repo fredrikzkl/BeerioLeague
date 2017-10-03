@@ -1,8 +1,10 @@
-package core;
+package tournements;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import core.Player;
+import core.Team;
 import functions.Event;
 
 public class Game3 {

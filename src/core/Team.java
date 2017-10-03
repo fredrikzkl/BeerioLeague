@@ -101,9 +101,19 @@ public class Team implements Comparator<Team>{
 	public void setDraws(int draws) {
 		this.draws = draws;
 	}
+	
+	public void addWin(){
+		p1.addWin();
+		p2.addWin();
+	}
 
 	public int getWins() {
 		return wins;
+	}
+	
+	public void addLoss(){
+		p1.addLoss();
+		p2.addLoss();
 	}
 
 	public int getLosses() {
