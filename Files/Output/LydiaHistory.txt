@@ -1,0 +1,32 @@
+Season Open - Game: 25
+Winner: Michael Ojiaku (1998,53) - Cups: 5 [16,07 Points, 49,79%]
+Looser: Lydia Seba (2000,00) - Cups: 0 [-16,07 Points, 50,21%]
+
+Season Open - Game: 26
+Winner: Michael Ojiaku (2014,60) - Cups: 4 [14,59 Points, 54,40%]
+Looser: Lydia Seba (1983,93) - Cups: 0 [-14,59 Points, 45,60%]
+
+Season Open - Game: 27
+Winner: Troels Sindballe (2001,47) - Cups: 1 [14,52 Points, 54,61%]
+Looser: Lydia Seba (1969,34) - Cups: 0 [-14,52 Points, 45,39%]
+
+Season Open - Game: 28
+Winner: Troels Sindballe (2015,99) - Cups: 1 [13,21 Points, 58,71%]
+Looser: Lydia Seba (1954,82) - Cups: 0 [-13,21 Points, 41,29%]
+
+Season Open - Game: 31
+Winner: Jakob Ravnskjær (1999,88) - Cups: 5 [13,34 Points, 58,31%]
+Looser: Lydia Seba (1941,60) - Cups: 0 [-13,34 Points, 41,69%]
+
+Season Open - Game: 32
+Winner: Jakob Ravnskjær (2013,22) - Cups: 7 [12,16 Points, 61,99%]
+Looser: Lydia Seba (1928,26) - Cups: 0 [-12,16 Points, 38,01%]
+
+Season Open - Game: 33
+Winner: Shewit (1969,47) - Cups: 1 [13,56 Points, 57,62%]
+Looser: Lydia Seba (1916,10) - Cups: 0 [-13,56 Points, 42,38%]
+
+Season Open - Game: 34
+Winner: Lydia Seba (1902,54) - Cups: 2 [19,64 Points, 38,62%]
+Looser: Shewit (1983,03) - Cups: 0 [-19,64 Points, 61,38%]
+

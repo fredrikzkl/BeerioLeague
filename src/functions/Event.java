@@ -30,6 +30,9 @@ public class Event {
 		winner.setRating(winner.getRating() + winnerPoints);
 		looser.setRating(looser.getRating() + looserPoints);
 		
+		winner.setRatingChange(winner.getRatingChange() + winnerPoints);
+		looser.setRatingChange(looser.getRatingChange() + looserPoints);
+
 		return new GameStats(winnerPoints,winnerChance,looserPoints,looserChance);
 	}
 	

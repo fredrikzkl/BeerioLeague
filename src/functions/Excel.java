@@ -16,7 +16,7 @@ import core.Player;
 
 
 
-public class ExcelConvert {
+public class Excel {
 	
 	
 	private static final String FILE_NAME = "./Files/ExcelSheets/BeerioLeague.xls";
@@ -32,10 +32,14 @@ public class ExcelConvert {
 		Losses,
 		Winrating,
 		Rankchange,
+		Winstreak,
+		AverageCups,
+		ArchEnemy,
+		Bitch,
 		Strikes
 	}
 	
-	public ExcelConvert(String bookname){
+	public Excel(String bookname){
 		
 		workbook = new HSSFWorkbook();
         sheet = workbook.createSheet(bookname);
@@ -64,7 +68,7 @@ public class ExcelConvert {
 						value = Integer.toString(i);
 						break;
 					case "Rating":
-						value = Double.toString(playerList.get(i-1).getRating());
+						value = String.format("%.2f", playerList.get(i-1).getRating());
 						break;
 					case "Wins":
 						value = Integer.toString(playerList.get(i-1).getWins());
@@ -73,13 +77,25 @@ public class ExcelConvert {
 						value = Integer.toString(playerList.get(i-1).getLosses());
 						break;
 					case "Winrating":
-						value = Double.toString(playerList.get(i-1).getWinratio());
+						value = String.format("%.2f", playerList.get(i-1).getWinratio());
 						break;
 					case "Rankchange":
-						value = Integer.toString(0);
+						value = String.format("%.2f", playerList.get(i-1).getRatingChange());
 						break;
 					case "Strikes":
 						value = Integer.toString(playerList.get(i-1).getStrikes());
+						break;
+					case "AverageCups":
+						value = String.format("%.2f", playerList.get(i-1).getAverageCupsPrgame());
+						break;
+					case "ArchEnemy":
+						value = playerList.get(i-1).getArchEnemy().getName(); 
+						break;
+					case "Bitch":
+						value = playerList.get(i-1).getBitch().getName();
+						break;
+					case "Winstreak":
+						value = Integer.toString(playerList.get(i-1).getLongestWinStreak());
 						break;
 					default:
 						value = "Value not found";

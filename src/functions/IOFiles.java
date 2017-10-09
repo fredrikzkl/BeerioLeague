@@ -1,10 +1,14 @@
 package functions;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.Collections;
 import java.util.List;
 
 import core.Game;
@@ -14,6 +18,12 @@ import core.Team;
 
 public class IOFiles {
 	
+	private String filename;
+	
+	public IOFiles(String filename){
+		this.filename = "./Files/" + filename + ".ser";
+	}
+	
 	public void savePlayers(List<Player> playerlist) {
 
 		FileOutputStream fout = null;
@@ -21,7 +31,7 @@ public class IOFiles {
 
 		try {
 
-			fout = new FileOutputStream("./Files/Players.ser");
+			fout = new FileOutputStream(filename);
 			oos = new ObjectOutputStream(fout);
 			
 			
@@ -76,8 +86,21 @@ public class IOFiles {
 		return null;
 	}
 	
+	public boolean updatePlayerReferance(Player player, List<Player> list){
+		for(int i = 0; i < list.size(); i++){
+			if(player.getName().equals(list.get(i).getName())){
+				list.set(i, player);
+				return true;
+			}
+				
+		}
+		System.out.println("updatePlayer: Player not found!");
+		return false;
+	}
+	
 	public void printPlayers(){
 		List<Player> pl = getPlayers();
+		Collections.sort(pl);
 		for(Player p : pl){
 			System.out.println("" + p.getName() + " - " + p.getRating() + " | W/L: " + p.getWins() + "/" + p.getLosses() + " (" + p.getWinratio() + ")");
 		}
@@ -103,6 +126,25 @@ public class IOFiles {
 		}
 	}
 	
+	public void writeHistory(Player player, String filename){
+		String directory = "Files/Output";
+		String path = "./" + directory + "/";
+		PrintWriter writer;
+		try {
+			writer = new PrintWriter(path + filename + ".txt", "UTF-8");
+			List<Game> h = player.getGameHistory();
+			for(Game g : h){
+				writer.println(g);
+			}
+			writer.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Writing to file: " + filename + " is completed! The fresh text file is found in '" + directory + "'");
+	}
+	
 	
 	public List<Player> getPlayers() {
 
@@ -113,7 +155,7 @@ public class IOFiles {
 
 		try {
 
-			fin = new FileInputStream("./Files/Players.ser");
+			fin = new FileInputStream(filename);
 			ois = new ObjectInputStream(fin);
 			
 	        pl = (List<Player>) ois.readObject();
@@ -143,5 +185,11 @@ public class IOFiles {
 
 		return pl;
 
+	}
+	
+	public void resetChangeRating(List<Player> playerList){
+		for(Player p : playerList){
+			p.setRatingChange(0);
+		}
 	}
 }
