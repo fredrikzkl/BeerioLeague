@@ -11,7 +11,7 @@ public class Team implements Comparator<Team>{
 	
 	public int wins, losses, draws;
 	
-	
+	 
 	private Player p1, p2;
 	
 	

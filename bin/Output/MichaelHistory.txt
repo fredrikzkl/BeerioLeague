@@ -1,0 +1,40 @@
+Season Open - Game: 21
+Winner: Michael Ojiaku (2000,00) - Cups: 2 [16,00 Points, 50,00%]
+Looser: Troels Sindballe (2000,00) - Cups: 0 [-16,00 Points, 50,00%]
+
+Season Open - Game: 22
+Winner: Troels Sindballe (1984,00) - Cups: 6 [17,47 Points, 45,41%]
+Looser: Michael Ojiaku (2016,00) - Cups: 0 [-17,47 Points, 54,59%]
+
+Season Open - Game: 25
+Winner: Michael Ojiaku (1998,53) - Cups: 5 [16,07 Points, 49,79%]
+Looser: Lydia Seba (2000,00) - Cups: 0 [-16,07 Points, 50,21%]
+
+Season Open - Game: 26
+Winner: Michael Ojiaku (2014,60) - Cups: 4 [14,59 Points, 54,40%]
+Looser: Lydia Seba (1983,93) - Cups: 0 [-14,59 Points, 45,60%]
+
+Season Open - Game: 29
+Winner: Michael Ojiaku (2029,19) - Cups: 9 [16,06 Points, 49,81%]
+Looser: Jakob Ravnskjær (2030,53) - Cups: 0 [-16,06 Points, 50,19%]
+
+Season Open - Game: 30
+Winner: Michael Ojiaku (2045,25) - Cups: 4 [14,59 Points, 54,42%]
+Looser: Jakob Ravnskjær (2014,47) - Cups: 0 [-14,59 Points, 45,58%]
+
+Season Open - Game: 35
+Winner: Michael Ojiaku (2059,84) - Cups: 3 [11,67 Points, 63,53%]
+Looser: Shewit (1963,39) - Cups: 0 [-11,67 Points, 36,47%]
+
+Season Open - Game: 36
+Winner: Michael Ojiaku (2071,51) - Cups: 1 [10,69 Points, 66,59%]
+Looser: Shewit (1951,72) - Cups: 0 [-10,69 Points, 33,41%]
+
+Season Open - Game: 41
+Winner: Michael Ojiaku (2082,20) - Cups: 2 [14,62 Points, 54,33%]
+Looser: Kristoffer Glahn (2052,07) - Cups: 0 [-14,62 Points, 45,67%]
+
+Season Open - Game: 42
+Winner: Fredrik Kloster (2097,07) - Cups: 2 [15,99 Points, 50,04%]
+Looser: Michael Ojiaku (2096,81) - Cups: 0 [-15,99 Points, 49,96%]
+

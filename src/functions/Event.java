@@ -36,6 +36,7 @@ public class Event {
 		return new GameStats(winnerPoints,winnerChance,looserPoints,looserChance);
 	}
 	
+	
 	public static void draw(Team t1, Team t2){
 		t1.draws++;t2.draws++;
 		double t1c = Functions.chanceOfWinning(t1.getRating(),t2.getRating());

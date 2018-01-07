@@ -1,5 +1,6 @@
 package functions;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -8,8 +9,19 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import core.Game;
 import core.GameStats;
@@ -191,5 +203,62 @@ public class IOFiles {
 		for(Player p : playerList){
 			p.setRatingChange(0);
 		}
+	}
+	
+	public boolean readFromOldExcel(String excelFileName, String outputFilename){
+		try {
+			List<Player> playerList = new ArrayList<>();
+			
+			String directory = "./Files/";
+			
+	        FileInputStream file = new FileInputStream(new File(directory + excelFileName));
+
+		    HSSFWorkbook wb = new HSSFWorkbook(file);
+		    HSSFSheet sheet = wb.getSheetAt(0);
+		    HSSFRow row;
+		    HSSFCell cell;
+
+		    int rows; // No of rows
+		    rows = sheet.getPhysicalNumberOfRows();
+
+		    int cols = 0; // No of columns
+		    int tmp = 0;
+
+		    // This trick ensures that we get the data properly even if it doesn't start from first few rows
+		    for(int i = 0; i < 10 || i < rows; i++) {
+		        row = sheet.getRow(i);
+		        if(row != null) {
+		            tmp = sheet.getRow(i).getPhysicalNumberOfCells();
+		            if(tmp > cols) cols = tmp;
+		        }
+		    }
+
+		    for(int r = 1; r < rows; r++) {
+		        row = sheet.getRow(r);
+		        if(row != null) {
+		        	Player temp = new Player("tmp");
+		            for(int c = 0; c < cols; c++) {
+		                cell = row.getCell((short)c);
+		                if(cell != null) {
+		                    System.out.println(cell);
+		                    if(c == 0) temp.setName(cell.toString());
+		                    if(c == 2) temp.setRating(cell.getNumericCellValue());
+		                    if(c == 3) temp.setWins((int)cell.getNumericCellValue());
+		                    if(c == 4) temp.setLosses((int) cell.getNumericCellValue());
+		                    if(c == 6) temp.setDraws((int)cell.getNumericCellValue());
+		                }
+		               
+		            }
+		            playerList.add(temp);
+		        }
+		       
+		    }
+		    
+		    savePlayers(playerList);
+		} catch(Exception ioe) {
+		    ioe.printStackTrace();
+		}
+		
+		return true;
 	}
 }

@@ -13,6 +13,7 @@ public class Player implements Serializable, Comparable<Player>{
 	
 	private int wins;
 	private int losses;
+	private int draws;
 	private double winratio;
 	private double ratingChange;
 	
@@ -30,6 +31,9 @@ public class Player implements Serializable, Comparable<Player>{
 		
 		this.gameHistory = new ArrayList<Game>();
 	}
+
+	
+	
 	
 	public String toString(){
 		return "" + getName() + " - " + getRating();
@@ -38,6 +42,11 @@ public class Player implements Serializable, Comparable<Player>{
 	public Player(String name, double currentRating){
 		this.name = name;
 		rating = currentRating;
+	}
+	
+	public Player(String name, Player p1, Player p2){
+		this(name);
+		this.rating = (p1.getRating()+p2.getRating())/2; //Average
 	}
 
 	public double getRating() {
@@ -77,7 +86,8 @@ public class Player implements Serializable, Comparable<Player>{
 	}
 	
 	public double getWinratio() {
-		return winratio;
+		double totalGames = wins + losses;
+		return wins / totalGames;
 	}
 	
 	public void addGame(Game game){
@@ -203,6 +213,38 @@ public class Player implements Serializable, Comparable<Player>{
 		}
 		if(tempStreak > longestStreak) longestStreak = tempStreak;
 		return longestStreak;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public void setWins(int wins) {
+		this.wins = wins;
+	}
+
+
+	public void setLosses(int losses) {
+		this.losses = losses;
+	}
+
+
+
+
+	public int getDraws() {
+		return draws;
+	}
+
+
+	public void setDraws(int draws) {
+		this.draws = draws;
+	}
+	
+	public void addepndToHistory(List<Game> a){
+		gameHistory.addAll(a);
 	}
 	
 	

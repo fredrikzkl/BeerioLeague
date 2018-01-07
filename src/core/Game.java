@@ -54,6 +54,8 @@ public class Game implements Serializable{
 	}
 	
 	
+	
+	
 	public String toString(){
 		//
 		String id = tourneyName + " - Game: " + gameNr +"\n";
