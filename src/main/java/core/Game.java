@@ -26,7 +26,7 @@ public class Game implements Serializable{
 	
 	private String comment;
 	
-	public Game(Player winner,int cupsWinner, Player looser, int cupsLooser, String tourneyName, int gameNumber){
+	public Game(Player winner, int cupsWinner, Player looser, int cupsLooser, String tourneyName, int gameNumber){
 		this.winner = winner;
 		this.looser = looser;
 		

@@ -1,12 +1,12 @@
 package functions;
 
+import core.Player;
+import core.Team;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-
-import core.Player;
-import core.Team;
 
 public class Functions {
 	
@@ -114,14 +114,14 @@ public class Functions {
 		p1.setRating(p1.getRating() + team_player.getRatingChange());
 		p1.setRatingChange(team_player.getRatingChange());
 		p1.setDraws(p1.getDraws() + team_player.getDraws());
-		p1.addepndToHistory(team_player.getGameHistory());
+		p1.appendToHistory(team_player.getGameHistory());
 		
 		p2.setWins(p2.getWins() + team_player.getWins());
 		p2.setLosses(p2.getLosses() + team_player.getLosses());
 		p2.setRating(p2.getRating() + team_player.getRatingChange());
 		p2.setRatingChange(team_player.getRatingChange());
 		p2.setDraws(p2.getDraws() + team_player.getDraws());
-		p2.addepndToHistory(team_player.getGameHistory());
+		p2.appendToHistory(team_player.getGameHistory());
 		
 	}
 	

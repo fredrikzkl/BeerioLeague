@@ -20,6 +20,12 @@ public class Player implements Serializable, Comparable<Player>{
 	private List<Game> gameHistory;
 	
 	private int strikes;
+
+	//Oppdateres gjennom manuell metode
+	private String archEnemy;
+	private String bitch;
+	private String avgCups;
+	private String winStreak;
 	
 	public Player(String name){
 		this.name = name;
@@ -28,11 +34,16 @@ public class Player implements Serializable, Comparable<Player>{
 		losses = 0;
 		winratio = 0;
 		ratingChange = 0;
-		
+
+		archEnemy = "";
+		bitch = "";
+		avgCups = "";
+		winStreak = "";
+
 		this.gameHistory = new ArrayList<Game>();
 	}
 
-	
+
 	
 	
 	public String toString(){
@@ -215,7 +226,13 @@ public class Player implements Serializable, Comparable<Player>{
 		return longestStreak;
 	}
 
+	public void updateMiscellaneousStats(){
+		archEnemy = getArchEnemy().name;
+		bitch = getBitch().name;
+		winStreak = Integer.toString(getLongestWinStreak());
+		avgCups = Double.toString(getAverageCupsPrgame());
 
+	}
 
 	public void setName(String name) {
 		this.name = name;
@@ -243,9 +260,12 @@ public class Player implements Serializable, Comparable<Player>{
 		this.draws = draws;
 	}
 	
-	public void addepndToHistory(List<Game> a){
+	public void appendToHistory(List<Game> a){
 		gameHistory.addAll(a);
 	}
-	
+
+	public void eraseGameHistory(){
+		gameHistory = new ArrayList<Game>();
+	}
 	
 }

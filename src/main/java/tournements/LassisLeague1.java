@@ -192,7 +192,8 @@ public class LassisLeague1 {
 
 
 
-
+		io.printHistoryPlayer(fredrik);
+        io.writeToJson(sl);
 		//io.savePlayers(sl);
 		//ex.WriteToBook(sl);
 

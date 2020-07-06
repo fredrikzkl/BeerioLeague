@@ -1,39 +1,51 @@
 package functions;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
+import com.google.gson.Gson;
+import core.Game;
+import core.Player;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import core.Game;
-import core.GameStats;
-import core.Player;
-import core.Team;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class IOFiles {
-	
+
+	private final String filePath = "./Files/";
 	private String filename;
+	private String json_filename;
 	
 	public IOFiles(String filename){
-		this.filename = "./Files/" + filename + ".ser";
+		this.filename = filePath + filename + ".ser";
+		this.json_filename = filePath + filename + ".json";
+	}
+
+	public void writeToJson(List<Player> players){
+		List<Player> copy_players = new ArrayList<Player>(players);
+		Collections.sort(copy_players);
+		for(Player p : copy_players){
+			p.updateMiscellaneousStats();
+		}
+
+		for(Player p : copy_players){
+			p.eraseGameHistory();
+		}
+
+
+		Gson gson = new Gson();
+		try {
+			Writer w =  new FileWriter(json_filename);
+			gson.toJson(copy_players,w);
+			w.flush();
+			w.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void savePlayers(List<Player> playerlist) {
