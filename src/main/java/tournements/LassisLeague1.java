@@ -10,8 +10,12 @@ import java.util.ArrayList;
 public class LassisLeague1 {
 
 	public static void main(String[] args) {
-		IOFiles io = new IOFiles("lassisLeaguePlayers");
-		String tn = "LassisLeague #1-2 - 5.juni 2020";
+
+		IOFiles io = new IOFiles("lassisLeagueSeason2");
+
+		//String tn = "LassisLeague #1-2 - 5.juni 2020";
+		String tn = "Sesongstart";
+
 		Excel ex = new Excel(tn);
 
 
@@ -196,8 +200,6 @@ public class LassisLeague1 {
         io.writeToJson(sl);
 		//io.savePlayers(sl);
 		//ex.WriteToBook(sl);
-
-
 
 
 		

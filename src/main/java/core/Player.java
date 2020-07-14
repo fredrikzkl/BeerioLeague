@@ -1,5 +1,7 @@
 package core;
 
+import utils.Match;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,7 @@ public class Player implements Serializable, Comparable<Player>{
 	private double ratingChange;
 	
 	private List<Game> gameHistory;
+	private List<Match> matches;
 	
 	private int strikes;
 
@@ -41,6 +44,7 @@ public class Player implements Serializable, Comparable<Player>{
 		winStreak = "";
 
 		this.gameHistory = new ArrayList<Game>();
+		this.matches = new ArrayList<>();
 	}
 
 
@@ -266,6 +270,13 @@ public class Player implements Serializable, Comparable<Player>{
 
 	public void eraseGameHistory(){
 		gameHistory = new ArrayList<Game>();
+	}
+
+	public void convertGamesToJSONMatches(){
+		for(Game g: getGameHistory()){
+			matches.add(g.getJsonMatch());
+		}
+		eraseGameHistory();
 	}
 	
 }

@@ -7,6 +7,9 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import utils.JsonPackager;
+import utils.Match;
+import utils.Tournament;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -25,15 +28,29 @@ public class IOFiles {
 	}
 
 	public void writeToJson(List<Player> players){
+
+		List<Tournament> tours = new ArrayList<>();
 		List<Player> copy_players = new ArrayList<Player>(players);
 		Collections.sort(copy_players);
+
 		for(Player p : copy_players){
 			p.updateMiscellaneousStats();
 		}
 
+		List<Match> matches = new ArrayList<>();
 		for(Player p : copy_players){
-			p.eraseGameHistory();
+			/*
+			for(Game g : p.getGameHistory()){
+				Match temp = g.getJsonMatch();
+				if(!matches.contains(temp)){
+					matches.add(temp);
+				}
+			}
+			*/
+			p.convertGamesToJSONMatches();
 		}
+
+
 
 
 		Gson gson = new Gson();

@@ -1,6 +1,7 @@
 package core;
 
 import functions.Event;
+import utils.Match;
 
 import java.io.Serializable;
 
@@ -89,6 +90,9 @@ public class Game implements Serializable{
 		return tourneyName + " - " + gameNr;
 	}
 	
-	
+	public Match getJsonMatch(){
+
+		return new Match(winner.getName(), looser.getName(), winnerCups, looserCups, stats.getWinnerChance()*100, stats.getLooserChance() * 100, stats.getWinnerPoints(), stats.getLooserPoints(), tourneyName, gameNr + "", comment );
+	}
 	
 }
