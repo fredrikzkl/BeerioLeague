@@ -192,14 +192,17 @@ public class LassisLeague1 {
 		new Game(ola, 2, sixten, 0, tn, 55, "Semifinale");
 		new Game(eivind, 2, morten, 0, tn, 56, "Semifinale");
 
-		new Game(ola, 2, eivind, 0, tn, 57, "Finale");
+		new Game(ola, 2, eivind, 1, tn, 57, "Finale");
 
 
 
 		io.printHistoryPlayer(fredrik);
-        io.writeToJson(sl);
-		//io.savePlayers(sl);
-		//ex.WriteToBook(sl);
+
+		ex.WriteToBook(sl);
+
+		io.savePlayers(sl);
+
+		io.writeToJson(sl);
 
 
 		
